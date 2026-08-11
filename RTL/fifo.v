@@ -1,6 +1,6 @@
-module fifo(clk,rst_n,in,out,wren,rden,empty,full);
+module fifo(clk,rst,in,out,wren,rden,empty,full);
   input            clk;
-  input            rst_n;
+  input            rst;
   input      [7:0] in;
   input            wren,rden;
   output reg [7:0] out;
@@ -10,8 +10,8 @@ module fifo(clk,rst_n,in,out,wren,rden,empty,full);
   reg [7:0] data [0:7];
   reg       wrap_rd,wrap_wr;
 
-  always@(posedge clk or posedge rst_n) begin
-    if(rst_n)begin
+  always@(posedge clk or posedge rst) begin
+    if(rst)begin
       wr_ptr  <= 3'b0;
       wrap_wr <= 1'b0;
       rd_ptr  <= 3'b0;

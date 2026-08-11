@@ -5,13 +5,13 @@ import uvm_pkg::*;
 // Interface
 
 interface fifo_if (input logic clk);
-  logic       rst_n;
+  logic       rst;
   logic [7:0] in, out;
   logic       wren, rden, empty, full;
 
   clocking drv_cb @(posedge clk);
     default input #1ns output #1ns;
-    output rst_n;
+    output rst;
     output in;
     output wren;
     output rden;
@@ -22,7 +22,7 @@ interface fifo_if (input logic clk);
 
   clocking mon_cb @(posedge clk);
     default input #1ns output #1ns;
-    input rst_n;
+    input rst;
     input in;
     input wren;
     input rden;
@@ -38,7 +38,7 @@ class fifo_seq_item extends uvm_sequence_item;
   rand bit [7:0] in;
     logic [7:0] out;
   logic       wren, rden, full, empty;
-  logic rst_n;
+  logic rst;
 
   function new(string name = "fifo_seq_item");
     super.new(name);
@@ -88,7 +88,7 @@ class fifo_driver extends uvm_driver #(fifo_seq_item);
     vif.drv_cb.rden  <= 0;
     vif.drv_cb.in    <= '0;
     repeat (3) @(vif.drv_cb);
-    vif.drv_cb.rst_n <= 1;
+    vif.drv_cb.rst <= 1;
     @(vif.drv_cb);
 
     forever begin

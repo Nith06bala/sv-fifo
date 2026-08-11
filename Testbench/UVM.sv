@@ -83,7 +83,7 @@ class fifo_driver extends uvm_driver #(fifo_seq_item);
   endfunction
 
   virtual task run_phase(uvm_phase phase);
-    vif.drv_cb.rst_n <= 1;
+    vif.drv_cb.rst <= 1;
     vif.drv_cb.wren  <= 0;
     vif.drv_cb.rden  <= 0;
     vif.drv_cb.in    <= '0;
@@ -103,7 +103,7 @@ class fifo_driver extends uvm_driver #(fifo_seq_item);
     for(i=0;i<20;i++)begin
       if(i>=0 && i<=7)begin
       @(vif.drv_cb);
-       vif.drv_cb.rst_n <= 0;
+       vif.drv_cb.rst <= 0;
       vif.drv_cb.wren <= 1;
       vif.drv_cb.rden <= 0;
       vif.drv_cb.in   <= item.in;
@@ -172,7 +172,7 @@ class fifo_monitor extends uvm_monitor;
       item.out     = vif.mon_cb.out;
       item.full    = vif.mon_cb.full;
       item.empty   = vif.mon_cb.empty;
-      item.rst_n =  vif.mon_cb.rst_n;
+      item.rst =  vif.mon_cb.rst;
       item_collected_port.write(item);
     end
   endtask
@@ -226,17 +226,17 @@ class fifo_scoreboard extends uvm_scoreboard;
 
   virtual function void write(fifo_seq_item item);
 
-    if ( (! $isunknown({item.rst_n, item.full, item.empty})) && ((item.full  !== expected_full) ||
+    if ( (! $isunknown({item.rst, item.full, item.empty})) && ((item.full  !== expected_full) ||
          (item.empty !== expected_empty))) begin // here this ! $unknown prevents checking for first state 
       `uvm_error("SCB_FAIL",
                  $sformatf("MISMATCH: wren=%0b rden=%0b write_count=%0d read_count=%0d rst=%0b| DUT full=%0b empty=%0b | EXP full=%0b empty=%0b",
           item.wren, item.rden, write_count,read_count,
-          item.full,  item.empty,item.rst_n,
+          item.full,  item.empty,item.rst,
           expected_full, expected_empty))
       fail_count++;
     end 
     
-    else if ($isunknown({item.rst_n, item.full, item.empty})) begin
+    else if ($isunknown({item.rst, item.full, item.empty})) begin
     `uvm_info("SCB",
               "Ignoring uninitialized FIFO state before reset",
               UVM_LOW)
@@ -247,7 +247,7 @@ end
       `uvm_info("SCB_PASS",
                 $sformatf("OK : wren=%0b rden=%0b write_count=%0d read_count=%0d full=%0b empty=%0b rst=%0b",
           item.wren, item.rden, write_count,read_count,
-                  item.full, item.empty,item.rst_n),UVM_LOW)
+                  item.full, item.empty,item.rst),UVM_LOW)
       pass_count++;
     end
 
@@ -353,7 +353,7 @@ module tb_top;
 
   fifo dut (
     .clk   (inf.clk),
-    .rst_n (inf.rst_n),
+    .rst   (inf.rst),
     .in    (inf.in),
     .out   (inf.out),
     .wren  (inf.wren),

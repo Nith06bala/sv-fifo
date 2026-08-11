@@ -1,0 +1,58 @@
+UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test fifo_test...
+# UVM_INFO testbench.sv(337) @ 0: uvm_test_top [TEST] Starting FIFO sequences
+# UVM_INFO testbench.sv(240) @ 5: uvm_test_top.env.scb [SCB] Ignoring uninitialized FIFO state before reset
+# UVM_INFO testbench.sv(247) @ 15: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=0 write_count=0 read_count=0 full=0 empty=1 rst=1
+# UVM_INFO testbench.sv(247) @ 25: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=0 write_count=0 read_count=0 full=0 empty=1 rst=1
+# UVM_INFO testbench.sv(247) @ 35: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=0 write_count=0 read_count=0 full=0 empty=1 rst=1
+# UVM_INFO testbench.sv(247) @ 45: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=0 write_count=0 read_count=0 full=0 empty=1 rst=1
+# UVM_INFO testbench.sv(247) @ 55: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=0 read_count=0 full=0 empty=1 rst=0
+# UVM_INFO testbench.sv(247) @ 65: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=1 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 75: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=2 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 85: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=3 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 95: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=4 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 105: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=5 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 115: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=6 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 125: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=7 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 135: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=0 write_count=0 read_count=0 full=1 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 145: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=0 full=1 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 155: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=1 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 165: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=2 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 175: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=3 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 185: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=4 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 195: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=5 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 205: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=6 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 215: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=7 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 225: uvm_test_top.env.scb [SCB_PASS] OK : wren=0 rden=1 write_count=0 read_count=0 full=0 empty=1 rst=0
+# UVM_INFO testbench.sv(247) @ 235: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=1 write_count=0 read_count=0 full=0 empty=1 rst=0
+# UVM_INFO testbench.sv(247) @ 245: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=1 write_count=1 read_count=0 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 255: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=1 write_count=2 read_count=1 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 265: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=1 write_count=3 read_count=2 full=0 empty=0 rst=0
+# UVM_INFO testbench.sv(247) @ 275: uvm_test_top.env.scb [SCB_PASS] OK : wren=1 rden=1 write_count=4 read_count=3 full=0 empty=0 rst=0
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 285: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO testbench.sv(285) @ 285: uvm_test_top.env.scb [SCB_SUMMARY] === Scoreboard done  PASS: 28   FAIL: 0 ===
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   34
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCB]     1
+# [SCB_PASS]    27
+# [SCB_SUMMARY]     1
+# [TEST]     1
+# [TEST_DONE]     1
+
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   1
+Done
